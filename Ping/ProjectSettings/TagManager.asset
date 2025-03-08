@@ -5,16 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ball
+  - Threat
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Walls
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Threat
+  - Ball
+  - Snake
   - 
   - 
   - 

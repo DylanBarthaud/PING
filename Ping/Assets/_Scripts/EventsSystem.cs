@@ -24,9 +24,15 @@ public class EventsSystem : MonoBehaviour
     }
 
     public event Action onBallDestroyed; 
+    public event Action onAlienDestroyed;
     public void OnBallDestroyed()
     {
-        print("here");
         onBallDestroyed?.Invoke();
     }
+
+    public void OnAlienDestroyed()
+    {
+        onAlienDestroyed?.Invoke();
+    }
+
 }
