@@ -73,6 +73,7 @@ public class Astroid : MonoBehaviour, IHitable
             newAstroid.SetSize(size - 1);
         }
 
+        EventsSystem.Current.OnAstroidDestroyed(); 
         Destroy(gameObject);
     }
 }

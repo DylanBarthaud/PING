@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class UiManager : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI scoreText, aliensKilledTxt, snakesKilledTxt, astroidsKilledTxt;
 
     private int score;
 
@@ -44,6 +44,9 @@ public class UiManager : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "DeathScreen")
         {
             scoreText.text = "Score: " + score.ToString();
+            aliensKilledTxt.text = "Aliens Killed: " + GameManager.Instance.GetAliensKilled();
+            snakesKilledTxt.text = "Snake Deaths: " + GameManager.Instance.GetSnakesKilled();
+            astroidsKilledTxt.text = "Astroids Destroyed: " + GameManager.Instance.GetAstroidsKilled(); 
         }
     }
 }

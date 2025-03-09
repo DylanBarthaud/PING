@@ -26,9 +26,10 @@ public class EventsSystem : MonoBehaviour
 
     public event Action onBallDestroyed; 
     public event Action onAlienDestroyed;
+    public event Action onSnakeDestroyed;
+    public event Action onAstroidDestroyed; 
     public void OnBallDestroyed()
     {
-        print("Ball destroyed"); 
         onBallDestroyed?.Invoke();
     }
 
@@ -37,4 +38,13 @@ public class EventsSystem : MonoBehaviour
         onAlienDestroyed?.Invoke();
     }
 
+    public void OnSnakeDestroyed()
+    {
+        onSnakeDestroyed?.Invoke();
+    }
+
+    public void OnAstroidDestroyed()
+    {
+        onAstroidDestroyed?.Invoke();
+    }
 }

@@ -165,6 +165,7 @@ public class Snake : MonoBehaviour, IHitable
         health -= 1; 
         if(health <= 0)
         {
+            EventsSystem.Current.OnSnakeDestroyed();
             DestroySegments(0); 
             Destroy(gameObject);
         }

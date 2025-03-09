@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; 
 
 public class Ball : MonoBehaviour, IHitable
 {
     #region Vars
+    [SerializeField]
+    private Color baseColor, onCDColor; 
+
     [SerializeField]
     private float baseSpeed;
     [SerializeField]
@@ -42,6 +46,8 @@ public class Ball : MonoBehaviour, IHitable
         #region Controls
         if (changeDirectCD <= 0)
         {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().color = baseColor; 
+
             if (Input.GetKeyDown(KeyCode.W))
             {
                 if (direction.y == 1)
@@ -76,6 +82,7 @@ public class Ball : MonoBehaviour, IHitable
 
         else
         {
+            transform.GetChild(0).GetComponent<SpriteRenderer>().color = onCDColor;
             changeDirectCD -= Time.deltaTime;
         }
 
