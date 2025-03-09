@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cff368ed67bc3549a0d940ae3345fcc
+guid: c4a86b048673b544497d17a2becb89cd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Astroids_0
+      name: Explosion_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 66
-        width: 191
-        height: 173
+        x: 5
+        y: 5
+        width: 6
+        height: 6
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c9b45dfa7a8dae498a4bbe861fd00c7
-      internalID: 354820099
+      spriteID: cf802d2eab5cb104e9d2c77680fa33c5
+      internalID: 1101304808
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astroids_1
+      name: Explosion_1
       rect:
         serializedVersion: 2
-        x: 294
-        y: 111
-        width: 140
-        height: 140
+        x: 20
+        y: 4
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c76b5fdefc39ee24bbeb0e0c0ce6b3a0
-      internalID: -419676884
+      spriteID: 3c5157ae05e894b439dae08265e79595
+      internalID: 385138606
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astroids_2
+      name: Explosion_2
       rect:
         serializedVersion: 2
-        x: 519
-        y: 128
-        width: 58
-        height: 57
+        x: 34
+        y: 2
+        width: 12
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,50 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f7834f8fd09fc142b24265fb8496722
-      internalID: 764060568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Astroids_3
-      rect:
-        serializedVersion: 2
-        x: 643
-        y: 131
-        width: 131
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85b4cd755cba057499fb251a5bb8eebb
-      internalID: -1343637707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Astroids_4
-      rect:
-        serializedVersion: 2
-        x: 794
-        y: 50
-        width: 63
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef8fbf19cca7d864da8cb73c46d9a64a
-      internalID: -2071594841
+      spriteID: 86044fa0482e6db4689b8cc41acf6988
+      internalID: -1783097165
       vertices: []
       indices: 
       edges: []
@@ -225,11 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Astroids_0: 354820099
-      Astroids_1: -419676884
-      Astroids_2: 764060568
-      Astroids_3: -1343637707
-      Astroids_4: -2071594841
+      Explosion_0: 1101304808
+      Explosion_1: 385138606
+      Explosion_2: -1783097165
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

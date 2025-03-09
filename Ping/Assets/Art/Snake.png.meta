@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cff368ed67bc3549a0d940ae3345fcc
+guid: 7927cf1f670cf0f4d8af6796dba43773
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Astroids_0
+      name: Snake_0
       rect:
         serializedVersion: 2
-        x: 31
-        y: 66
-        width: 191
-        height: 173
+        x: 1
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c9b45dfa7a8dae498a4bbe861fd00c7
-      internalID: 354820099
+      spriteID: 55b4bbf2184edee4992c04783c76b2cb
+      internalID: 754453430
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astroids_1
+      name: Snake_1
       rect:
         serializedVersion: 2
-        x: 294
-        y: 111
-        width: 140
-        height: 140
+        x: 17
+        y: 1
+        width: 14
+        height: 14
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c76b5fdefc39ee24bbeb0e0c0ce6b3a0
-      internalID: -419676884
+      spriteID: 80d052a0d0a6fa64eb916f80d0df7645
+      internalID: 492000030
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Astroids_2
+      name: Snake_2
       rect:
         serializedVersion: 2
-        x: 519
-        y: 128
-        width: 58
-        height: 57
+        x: 33
+        y: 1
+        width: 14
+        height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,50 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f7834f8fd09fc142b24265fb8496722
-      internalID: 764060568
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Astroids_3
-      rect:
-        serializedVersion: 2
-        x: 643
-        y: 131
-        width: 131
-        height: 120
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85b4cd755cba057499fb251a5bb8eebb
-      internalID: -1343637707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Astroids_4
-      rect:
-        serializedVersion: 2
-        x: 794
-        y: 50
-        width: 63
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ef8fbf19cca7d864da8cb73c46d9a64a
-      internalID: -2071594841
+      spriteID: 5cf523b9c8310f340a5b47696fbdbb42
+      internalID: 503385475
       vertices: []
       indices: 
       edges: []
@@ -225,11 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Astroids_0: 354820099
-      Astroids_1: -419676884
-      Astroids_2: 764060568
-      Astroids_3: -1343637707
-      Astroids_4: -2071594841
+      Snake_0: 754453430
+      Snake_1: 492000030
+      Snake_2: 503385475
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

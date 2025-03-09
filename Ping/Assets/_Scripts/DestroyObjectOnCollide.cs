@@ -14,7 +14,6 @@ public class DestroyObjectOnCollide : MonoBehaviour
         {
             if (collision.gameObject.CompareTag(tag))
             {
-                print("here");
                 collision.gameObject.GetComponent<IHitable>().OnHit();
             }
         }

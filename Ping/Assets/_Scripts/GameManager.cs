@@ -30,7 +30,10 @@ public class GameManager : MonoBehaviour
     private GameObject spaceInvadersManager;
 
     [SerializeField]
-    private GameObject Snake; 
+    private GameObject Snake;
+
+    [SerializeField]
+    private GameObject astroidSpawner; 
 
     //Stat data
     private int level;
@@ -41,7 +44,11 @@ public class GameManager : MonoBehaviour
     private int overallScore;
     private int currentScore;
 
-    private int aliensKilled; 
+    private int threatMeter; 
+
+    private int aliensKilled;
+
+    private bool shipLoaded; 
     #endregion
 
     private void Awake()
@@ -85,17 +92,15 @@ public class GameManager : MonoBehaviour
     {
         if(scene.name == "GameLevel")
         {
-            SnakeLoaded = false;
-            SpaceInvadersLoaded = false;
             currentScore = 0; 
-            LoadBallObjects();
+            LoadBallObject();
         }
     }
 
     /// <summary>
     /// Loads needed ball into the game level
     /// </summary>
-    public void LoadBallObjects()
+    public void LoadBallObject()
     {
         if(ballsLeft > 40)
         {
@@ -107,34 +112,58 @@ public class GameManager : MonoBehaviour
         ballsLeft += 1; 
     }
 
-    private bool SpaceInvadersLoaded = false;
     private void LoadSpaceInvaders()
     {
         Instantiate(spaceInvadersManager, new Vector3(0, 9f, 0), Quaternion.identity);
-
-        Instantiate(spaceShipPreset, new Vector3(0, -4.74f, 0), Quaternion.identity);
-        SpaceInvadersLoaded = true;
     }
 
-    private bool SnakeLoaded = false;
     private void LoadSnake()
     {
         Instantiate(Snake, new Vector3(-8,-4,0), Quaternion.identity);  
-        SnakeLoaded = true;
+    }
+
+    private void LoadAstroids()
+    {
+        Instantiate(astroidSpawner, new Vector3(-20, 15, 0), Quaternion.identity);
+        Instantiate(astroidSpawner, new Vector3(20, -15, 0), Quaternion.identity);
+        Instantiate(astroidSpawner, new Vector3(20, 15, 0), Quaternion.identity);
+        Instantiate(astroidSpawner, new Vector3(-20, -15, 0), Quaternion.identity);
     }
 
     public void AddPoint()
     {
         currentScore += 1; 
+        LoadBallObject();
 
-        if(currentScore >= 15 && !SpaceInvadersLoaded)
+        threatMeter += 1;  
+        if(currentScore >= 10 && !shipLoaded)
         {
-            LoadSpaceInvaders();
+            Instantiate(spaceShipPreset, new Vector3(0, -4.74f, 0), Quaternion.identity);
+            shipLoaded = true; 
         }
 
-        else if(currentScore >= 20 && !SnakeLoaded)
+        if(threatMeter >= 10)
         {
-            LoadSnake();
+            spawnThreat();
+            threatMeter = 0; 
+        }
+    }
+
+    private void spawnThreat()
+    {
+        int r = Random.Range(0, 3);
+
+        switch (r)
+        {
+            case 0:
+                LoadSpaceInvaders();
+                break;
+            case 1:
+                LoadSnake();
+                break;
+            case 2:
+                LoadAstroids();
+                break; 
         }
     }
 

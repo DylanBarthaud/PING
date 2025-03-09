@@ -9,9 +9,7 @@ public class Ball : MonoBehaviour, IHitable
     private float baseSpeed;
     [SerializeField]
     private float baseChangeDirctCD;
-    [SerializeField]
     private float speed;
-    [SerializeField]
     private float changeDirectCD;
 
     private AudioSource audioSource;
@@ -122,33 +120,7 @@ public class Ball : MonoBehaviour, IHitable
             direction.y = -direction.y;
         }
 
-        if(speed > 1.6f)
-        {
-            GameManager.Instance.LoadBallObjects(); 
-        }
-
-        Dash(2f);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ball"))
-        {
-            Vector2 collisionNormal = collision.GetContact(0).normal;
-
-            Direction bounceDirection;
-            if (Mathf.Abs(collisionNormal.x) > Mathf.Abs(collisionNormal.y))
-            {
-                bounceDirection = Direction.X; 
-            }
-            else
-            {
-                bounceDirection = Direction.Y; 
-            }
-
-            collision.gameObject.GetComponent<Ball>().Bounce(bounceDirection);
-            GameManager.Instance.AddPoint();
-        }
+        speed = baseSpeed;
     }
 
     public void DestroyBall()

@@ -21,12 +21,14 @@ public class EventsSystem : MonoBehaviour
     private void Awake()
     {
         current = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     public event Action onBallDestroyed; 
     public event Action onAlienDestroyed;
     public void OnBallDestroyed()
     {
+        print("Ball destroyed"); 
         onBallDestroyed?.Invoke();
     }
 

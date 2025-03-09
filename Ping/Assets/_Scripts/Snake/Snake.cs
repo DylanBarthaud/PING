@@ -26,6 +26,8 @@ public class Snake : MonoBehaviour, IHitable
     private float baseDirectChangeCD;
     private float directChangeCD;
 
+    [SerializeField]
+    private AudioSource audioSource;
     #endregion
 
     private void Start()
@@ -55,13 +57,7 @@ public class Snake : MonoBehaviour, IHitable
             directChangeCD -= Time.deltaTime;
         }
 
-        if(transform.position.x <= -8 
-            || transform.position.x >= 8
-            || transform.position.y <= -4
-            || transform.position.y >= 4)
-        {
-
-        }
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -112,7 +108,28 @@ public class Snake : MonoBehaviour, IHitable
             (transform.position.x + d.x < BOUNDS_X_MIN || transform.position.x + d.x > BOUNDS_X_MAX) ||
             (transform.position.y + d.y < BOUNDS_Y_MIN || transform.position.y + d.y > BOUNDS_Y_MAX));
 
+        directions.RemoveAll(d => (Vector2)transform.position + d == new Vector2(0,0));
+
         direction = directions[Random.Range(0,directions.Count)];
+
+        //Flip snake head to face correct direction
+        if (direction.Equals(new Vector2(0, 1)))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (direction.Equals(new Vector2(0, -1)))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 180);
+        }
+        else if (direction.Equals(new Vector2(1, 0)))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -90);
+        }
+        else if (direction.Equals(new Vector2(-1, 0)))
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 90);
+        }
+
     }
 
     private void Grow()
@@ -121,20 +138,26 @@ public class Snake : MonoBehaviour, IHitable
         GameObject newSegment = Instantiate(bodyObj); 
 
         newSegment.transform.position = bodyParts[bodyParts.Count - 1].transform.position;
+        BodyPart segmentScr = newSegment.gameObject.GetComponent<BodyPart>();
+        segmentScr.SetHead(this);
+        segmentScr.setIndex(bodyParts.Count);
 
         bodyParts.Add(newSegment);
     }
 
-    private void Die()
+    /// <summary>
+    /// Destroys segments of snake.
+    /// </summary>
+    /// <param name="startIndex"> the last segment to be destroyed </param>
+    public void DestroySegments(int startIndex)
     {
-        foreach(GameObject segment in bodyParts)
+        PlaySound();
+
+        for (int i = startIndex; i < bodyParts.Count; i++)
         {
-            Destroy(segment);
+            Destroy(bodyParts[i]);
         }
-
-        bodyParts.Clear();
-        Destroy(gameObject);
-
+        bodyParts.RemoveRange(startIndex, bodyParts.Count - startIndex);
     }
 
     public void OnHit()
@@ -142,7 +165,13 @@ public class Snake : MonoBehaviour, IHitable
         health -= 1; 
         if(health <= 0)
         {
-            Die(); 
+            DestroySegments(0); 
+            Destroy(gameObject);
         }
+    }
+
+    public void PlaySound()
+    {
+        audioSource.Play();
     }
 }

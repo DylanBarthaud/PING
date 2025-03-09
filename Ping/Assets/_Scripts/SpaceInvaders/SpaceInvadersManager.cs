@@ -9,7 +9,12 @@ public class SpaceInvadersManager : MonoBehaviour
 
     [SerializeField]
     private float baseSpawnCD;
-    private float spawnCD; 
+    private float spawnCD;
+
+    private void Start()
+    {
+        Invoke(nameof(Die), 60); 
+    }
 
     void Update()
     {
@@ -31,5 +36,10 @@ public class SpaceInvadersManager : MonoBehaviour
         {
             spawnCD -= Time.deltaTime;  
         }
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

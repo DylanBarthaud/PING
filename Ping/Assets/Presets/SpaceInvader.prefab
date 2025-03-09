@@ -229,6 +229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   audioSource: {fileID: 5023134156360420135}
+  animator: {fileID: 4859274223149191668}
 --- !u!114 &3232488839432866506
 MonoBehaviour:
   m_ObjectHideFlags: 0

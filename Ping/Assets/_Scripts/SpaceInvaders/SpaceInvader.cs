@@ -9,6 +9,8 @@ public class SpaceInvader : MonoBehaviour, IHitable
 
     [SerializeField]
     private AudioSource audioSource;
+    [SerializeField]
+    private Animator animator;
 
     private bool isDying = false; 
 
@@ -22,7 +24,9 @@ public class SpaceInvader : MonoBehaviour, IHitable
         }
 
         isDying = true;
+
         audioSource.Play();
+        animator.Play("SpaceInvaderDeath"); 
         EventsSystem.Current.OnAlienDestroyed();
 
         Destroy(gameObject, audioSource.clip.length);
